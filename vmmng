@@ -3,6 +3,16 @@
 USERNAME = "root"
 HOSTNAME = "proxima.andreicek.lan"
 
+def help
+	puts "vmmng [list | status | on | off | restart] {Vmid}"
+	puts "	list - This will list all available VM's on the ESXi host"
+	puts "	status {Vmid} - Checks the power state of the specified VM"
+	puts "	on {Vmid} - Turns on the VM"
+	puts "	off {Vmid} - Turns off the VM"
+	puts "	restart {Vmid} - Turns on and off the VM"
+	abort
+end
+
 def connection
 	return "ssh " + USERNAME + "@" + HOSTNAME
 end
@@ -49,8 +59,8 @@ def menu
 		sleep 5
 		VmOn()
 		status()
-	#else
-	#	help
+	else
+		help
 	end
 end
 
