@@ -35,4 +35,5 @@ Simple, yet effective, VMWare ESXi comand line wrapper written in Ruby. I wrote 
 ##Dependencies
 
 * Any Ruby
+* OpenSSH
 * Shell access turned on on ESXi and key auth on also
