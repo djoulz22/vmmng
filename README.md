@@ -31,3 +31,8 @@ Simple, yet effective, VMWare ESXi comand line wrapper written in Ruby. I wrote 
 4. Allow it to run
 
     `chmod +x ~/.dotfiles/bin/vmmng`
+    
+##Dependencies
+
+* Any Ruby
+* Shell access turned on on ESXi and key auth on also
