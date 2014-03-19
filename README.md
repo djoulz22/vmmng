@@ -24,7 +24,7 @@ Simple, yet effective, VMWare ESXi comand line wrapper written in Ruby. I wrote 
     
     `HOSTNAME = the.server.com`
 
-3. Move the `vmmng` script in your bin folder
+3. Move the `vmmng` script to your bin folder
 
     `mv vmmng ~/.dotfiles/bin`
     
