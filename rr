@@ -1,0 +1,23 @@
+mkdir /vmfs/volumes/SSD_01/VirtualCenter
+vmkfstools -c 15G -a lsilogic /vmfs/volumes/SSD_01/VirtualCenter/VirtualCenter.vmdk
+touch /vmfs/volumes/SSD_01/VirtualCenter/VirtualCenter.vmx
+
+config.version = "8"
+virtualHW.version= "8"
+guestOS = "debian6"
+memsize = "1024"
+displayname = "VirtualCenter"
+scsi0.present = "TRUE"
+scsi0.virtualDev = "lsilogic"
+scsi0:0.present = "TRUE"
+scsi0:0.fileName = "VirtualCenter.vmdk"
+ide1:0.present = "true"
+ide1:0.deviceType = "cdrom-image"
+ide1:0.filename = "/vmfs/volumes/52f2b127-8578b560-8ce1-6805ca1ee47e/iso/debian-7.3.iso"
+ide1:0.startConnected = "TRUE"
+ethernet0.present= "true"
+ethernet0.startConnected = "true"
+ethernet0.virtualDev = "e1000"
+
+chmod 744 /vmfs/volumes/SSD_01/VirtualCenter/VirtualCenter.vmx
+vim-cmd solo/registervm /vmfs/volumes/SSD_01/VirtualCenter/VirtualCenter.vmx VirtualCenter

@@ -44,6 +44,22 @@ def VmOff
 	puts output
 end
 
+def create
+	vm_name = ARGV[1]
+	config_url = ARGV[2]
+	new_vm_path = "/vmfs/volumes/SSD_01/" + vm_name
+	esxi_Cmd_mkdir = "mkdir /vmfs/volumes/SSD_01/" + vm_name
+	output = `#{connection() + " " + esxi_Cmd_mkdir}`
+	esxi_Cmd_disk = "vmkfstools -c 15G -a lsilogic " + new_vm_path + "/" + vm_name + ".vmdk"
+	output = `#{connection() + " " + esxi_Cmd_disk}`
+	esxi_Cmd_config = "wget -O " + new_vm_path + "/" + vm_name + ".vmx " + config_url
+	output = `#{connection() + " " + esxi_Cmd_config}`
+	esxi_Cmd_config_774 = "chmod 744 " + new_vm_path + "/" + vm_name + ".vmx"
+	output = `#{connection() + " " + esxi_Cmd_config_774}`
+  esxi_Cmd_register = "vim-cmd solo/registervm " + new_vm_path + "/" + vm_name + ".vmx " + vm_name
+	output = `#{connection() + " " + esxi_Cmd_register}`
+end
+
 def menu
 	choice = ARGV[0]
 	if (choice == "list")
@@ -59,6 +75,8 @@ def menu
 		sleep 5
 		VmOn()
 		status()
+	elsif (choice == "create")
+		create()
 	else
 		help
 	end
