@@ -44,6 +44,17 @@ def VmOff
 	puts output
 end
 
+def halt
+	esxi_Cmd = "halt"
+	puts "This will turn off the " + HOSTNAME +". Are you sure? [Yes] "
+	sure = gets.chomp
+	if (sure == "Yes" or sure == "")
+		output = `#{connection() + " " + esxi_Cmd}`
+		puts output
+	else
+		abort
+end
+
 def menu
 	choice = ARGV[0]
 	if (choice == "list")
@@ -59,6 +70,8 @@ def menu
 		sleep 5
 		VmOn()
 		status()
+	elsif (choice == "halt")
+		halt()
 	else
 		help
 	end
