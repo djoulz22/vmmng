@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 USERNAME = "root"
-HOSTNAME = "proxima.andreicek.lan"
+HOSTNAME = "proxima.d.h"
 
 def help
 	puts "vmmng [list | status | on | off | restart] {Vmid}"
@@ -10,6 +10,8 @@ def help
 	puts "	on {Vmid} - Turns on the VM"
 	puts "	off {Vmid} - Turns off the VM"
 	puts "	restart {Vmid} - Turns on and off the VM"
+	puts "	halt - Shutsdown the ESXi host"
+	puts "	top - Displays the esxtop"
 	abort
 end
 
@@ -46,13 +48,14 @@ end
 
 def halt
 	esxi_Cmd = "halt"
-	puts "This will turn off the " + HOSTNAME +". Are you sure? [Yes] "
+	puts "This will turn off the " + HOSTNAME + ". Are you sure? [Yes] "
 	sure = gets.chomp
 	if (sure == "Yes" or sure == "")
 		output = `#{connection() + " " + esxi_Cmd}`
 		puts output
 	else
 		abort
+	end
 end
 
 def menu
