@@ -7,7 +7,7 @@ var vimcmd = "vim-cmd";
 var ssh = new SSH({
     host: 'esxi01.d.h',
     user: 'root',
-    key: fs.readFileSync('/Users/andrei/.ssh/id_rsa')
+    key: fs.readFileSync(process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'] + '/.ssh/id_rsa')
 });
 
 module.exports = {
