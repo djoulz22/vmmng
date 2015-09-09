@@ -1,6 +1,6 @@
 {
   "name": "vmmng",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "VMWare ESXi command line wrapper",
   "main": "vmmng.js",
   "bin": {
