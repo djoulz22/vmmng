@@ -1,7 +1,7 @@
 vmmng
 ======
 
-Simple, yet effective, VMWare ESXi comand line wrapper written in Ruby. I wrote this so I don't have to use that pesky Windows VM to power on and off appliances. I will keep adding more stuff to this when I can.
+Simple, yet effective, VMWare ESXi command line wrapper written in Ruby. I wrote this so I don't have to use that pesky Windows VM to power on and off appliances. I will keep adding more stuff to this when I can.
 
 ##Usage
 
@@ -17,21 +17,21 @@ Simple, yet effective, VMWare ESXi comand line wrapper written in Ruby. I wrote 
 1. Clone the repo
 
     `git clone https://github.com/andreicek/vmmng.git`
-    
+
 2. Edit the script and replace `USERNAME` and `HOSTNAME`
 
     `USERNAME = root`
-    
+
     `HOSTNAME = the.server.com`
 
 3. Move the `vmmng` script to your bin folder
 
     `mv vmmng ~/.dotfiles/bin`
-    
+
 4. Allow it to run
 
     `chmod +x ~/.dotfiles/bin/vmmng`
-    
+
 ##Dependencies
 
 * Any Ruby

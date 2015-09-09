@@ -1,0 +1,23 @@
+{
+  "name": "vmmng",
+  "version": "2.0.0",
+  "description": "VMWare ESXi command line wrapper",
+  "main": "vmmng.js",
+  "bin": {
+    "vmmng": "vmmng.js"
+  },
+  "dependencies": {
+    "simple-ssh": "latest",
+    "command-line-args": "latest",
+    "cli-table": "latest"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Andrei Zvonimir Crnkovic",
+  "license": "MIT"
+}
