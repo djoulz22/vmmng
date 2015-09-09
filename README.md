@@ -1,6 +1,8 @@
 vmmng
 ======
 
+[![npm version](https://badge.fury.io/js/vmmng.svg)](http://badge.fury.io/js/vmmng)
+
 Simple, yet effective, VMWare ESXi command line wrapper written in Ruby. I wrote this so I don't have to use that pesky Windows VM to power on and off appliances. I will keep adding more stuff to this when I can.
 
 ##Usage
