@@ -4,7 +4,7 @@ var commandLineArgs = require('command-line-args');
 var exec = require('./exec');
 
 var cli = commandLineArgs([
-    { name: "list", alias: "l", type: Boolean, defaultOption: false },
+    { name: "list", alias: "l", type: Boolean},
     { name: "on", alias: "o", type: Number, multiple: true },
     { name: "off", alias: "f", type: Number, multiple: true },
     { name: "status", alias: "s", type: Number, multiple: true },
